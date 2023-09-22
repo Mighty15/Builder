@@ -12,10 +12,10 @@ class phone
 
 	public function __toString()
 	{
-		$salida = "Procesador" . $this->procesador->nucleos .
+		$salida = "Procesador: " . $this->procesador->nucleos .
 			"" . $this->procesador->velocidad .
-			"<br>Pantalla:" . $this->pantalla . "<br>Memoria" . $this->memoria .
-			"<br>Resolucion:" . $this->resolucion . "<br>bateria:" . $this->bateria . "<br>camara" . $this->camara;
+			"<br>Pantalla:" . $this->pantalla . "<br>Memoria:" . $this->memoria .
+			"<br>Resolucion:" . $this->resolucion . "<br>Bateria:" . $this->bateria . "<br>Camara:" . $this->camara;
 		return $salida;
 	}
 
@@ -26,7 +26,7 @@ abstract class crearphone
 
 	public $phone;
 
-	public function crearAuto()
+	public function crearphone()
 	{
 		$this->phone = new phone();
 	}
@@ -45,7 +45,7 @@ class GalaxyM31 extends crearphone
 	public function buildProcesador()
 	{
 		$procesador = new procesador();
-		$procesador->nucleos = "octa core";
+		$procesador->nucleos = "Octa core";
 		$procesador->potencia = "2.3 GHz";
 		$this->phone->procesador = $procesador;
 	}
@@ -67,12 +67,12 @@ class GalaxyM31 extends crearphone
 
 	public function buildBateria()
 	{
-		$this->phone->resolucion = "6000 mAH";
+		$this->phone->bateria = "6000 mAH";
 	}
 
 	public function buildCamara()
 	{
-		$this->phone->resolucion = "64MP + 8MP + 5MP + 5MP";
+		$this->phone->camara = "64MP + 8MP + 5MP + 5MP";
 	}
 
 }
@@ -82,7 +82,7 @@ class GalaxyNote10 extends crearphone
 	public function buildProcesador()
 	{
 		$procesador = new procesador();
-		$procesador->nucleos = "octa core";
+		$procesador->nucleos = "Octa core";
 		$procesador->potencia = "2.7 GHz";
 		$this->phone->procesador = $procesador;
 	}
@@ -93,7 +93,7 @@ class GalaxyNote10 extends crearphone
 
 	public function buildMemoria()
 	{
-		$this->phone->memoria = "6 GB";
+		$this->phone->memoria ="6 GB";
 	}
 
 	public function buildResolucion()
@@ -103,17 +103,17 @@ class GalaxyNote10 extends crearphone
 
 	public function buildBateria()
 	{
-		$this->phone->resolucion = "4500 mAH";
+		$this->phone->bateria = "4500 mAH";
 	}
 
 	public function buildCamara()
 	{
-		$this->phone->resolucion = "12MP + 12MP + 12MP ";
+		$this->phone->camara = "12MP + 12MP + 12MP ";
 	}
 
 }
 
-class AutoDirector
+class PhoneDirector
 {
 
 	public $phoneBuilder;
@@ -122,7 +122,7 @@ class AutoDirector
 	public function constructPhone()
 	{
 
-		$this->phoneBuilder->crearPhone();
+		$this->phoneBuilder->crearphone();
 		$this->phoneBuilder->buildMemoria();
 		$this->phoneBuilder->buildResolucion();
 		$this->phoneBuilder->buildProcesador();
