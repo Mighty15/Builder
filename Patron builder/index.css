@@ -1,0 +1,56 @@
+
+  @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Monoton&display=swap');
+
+  *{
+    font-family: 'Bebas Neue', sans-serif;
+    background-color: lightgray;
+
+  }
+
+  img{
+    width: 100px;
+  }
+  .Cont1{
+    display: flex;
+    padding: 30px;
+    width: 800px;
+    flex-direction: column;
+    align-items:stretch;
+    font-size: larger;
+  }
+.Cont1 input{
+    width: 75px;
+    height: 40px;
+    background-color:blue ;
+    color: white;
+    align-items: center;
+    padding: 15px;
+    border: none;
+    border-radius: 10px;
+    font-weight: 500;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+  select{
+    border: none;
+    display: flex;
+    width:60%; 
+    align-self:flex-start;
+    outline: none;
+}
+
+select:hover{
+    opacity: 0.6;
+}
+input:hover{
+    opacity:0.2;
+}
+.cont2{
+    gap: 15px;
+    padding: 30px;
+    font-size: xx-large;
+}
+.cont2 img{
+    width: 400px;
+}
